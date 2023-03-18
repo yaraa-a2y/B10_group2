@@ -17,6 +17,7 @@ public class B10_group2 {
     public static void main(String[] args) {
         System.out.println("hello , I am Yara ");
         System.out.println("hi , i am amera ");
+        System.out.println(" hello , i am ragad ");
     }
     
 }
