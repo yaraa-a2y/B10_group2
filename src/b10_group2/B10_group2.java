@@ -15,6 +15,7 @@ public class B10_group2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.out.println("hello , I am Yara ");
         System.out.println("hi , i am amera ");
     }
     
