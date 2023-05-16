@@ -1,12 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
-/**
- *
- * @author elsaa
- */
 public class person {
-    
+
+private String Name ;
+private int Age ;
+private int Phone ;
+private String Sex ;
+private String user_name ;
+private String pass_word ;
+
+
 }

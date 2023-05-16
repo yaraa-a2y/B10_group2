@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
-/**
- *
- * @author elsaa
- */
 public class room {
+  
     
+    private int room_id ;
+    private String room_type ;
+    private String room_description ;
+    private int room_number ;
 }
