@@ -1,5 +1,5 @@
 
-public class customer_service {
+public class customer_service extends person {
  
     
     private int id ;

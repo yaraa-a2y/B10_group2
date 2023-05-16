@@ -1,5 +1,5 @@
 
-public class manager {
+public class manager extends person{
  
     
     private int id ;
