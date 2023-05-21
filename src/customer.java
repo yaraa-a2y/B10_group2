@@ -4,10 +4,11 @@ public class customer extends person {
 private String address ;   
 private int id ;
 
-customer ( String address , int id ){
-    this.address = address ;   
-    this.id= id ;
-}
+    public customer(String address, int id, String Name, int Age, int Phone, String Sex, String user_name, String pass_word) {
+        super(Name, Age, Phone, Sex, user_name, pass_word);
+        this.address = address;
+        this.id = id;
+    }
 
 
 public String getAddress(){
