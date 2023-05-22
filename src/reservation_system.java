@@ -16,10 +16,12 @@ public class reservation_system {
         System.out.println("1- browse rooms and suites  \n2- reservation    \n3- request a service    \n4- view list of reservation     \n5- exit  ");
         System.out.println("please enter the number of service from the menu : ");
         int num = input.nextInt();
-
+        
+        
         while (true) {
             if (num == 1) {
-
+                DisplayRoom();
+                break;
             }
             if (num == 2) {
 
@@ -57,7 +59,20 @@ public class reservation_system {
             new customer_service(1149303, 1500, "sultanSaud", 30, 0511212345, "male", "123sultan", "azaz12345"),
             new manager(1111695, 5000, "leenaSultan", 63, 0522552255, "female", "leenaa123", "09876134")
         };
-
+        
     }
 
+    
+    public static void DisplayRoom(){
+        
+        room roomArr []= {
+         new room(1,"Studio with Sofa Bed","1 king bed " ,500)
+        , new room(2,"Deluxe Suite","Bedroom 1: 1 king bed Bedroom 2: 1 twin bed Living room: 1 sofa bed ",1500)
+        , new room(3,"King Suite","Bedroom 1: 1 king bed Bedroom 2: 1 king bed Bedroom 3: 1 twin bed  Living room: 2 sofa beds",5000)
+        }; 
+        
+        for (int i = 0; i < roomArr.length; i++) {
+           System.out.println(roomArr[i].toString());
+        }
+    }
 }

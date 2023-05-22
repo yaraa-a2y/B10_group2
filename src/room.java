@@ -5,15 +5,16 @@ public class room {
     private int room_id ;
     private String room_type ;
     private String room_description ;
-    private int room_number ;
+    private int room_price ;
+
     
     
-    room(int room_id , String room_type , String room_description ,int room_number ){
+    room(int room_id , String room_type , String room_description ,int room_price ){
         
     this.room_id= room_id ;
     this.room_type= room_type ;
     this.room_description= room_description ;
-    this.room_number= room_number ;
+    this.room_price= room_price ;
     }
     
     public int getRoom_id(){
@@ -40,11 +41,16 @@ public class room {
         this.room_description = room_description;
     }
     
-    public int getRoom_number(){
-        return room_number;
+    public int getroom_price(){
+        return room_price;
     }
     
-    public void setRoom_number(int room_number ){
-        this.room_number =room_number ;
+    public void setroom_price(int room_price ){
+        this.room_price =room_price ;
+    }
+    
+    @Override
+    public String toString() {
+        return "room_id : " + room_id + ", room_type : " + room_type + ", room_description : " + room_description + ", room_price : " + room_price ;
     }
 }
