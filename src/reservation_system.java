@@ -10,6 +10,11 @@ public class reservation_system {
         System.out.println("----------------Welcome to Stars Hotel -----------------------");
         System.out.println("----------------Login to your account -----------------------");
         System.out.println("***************************************************************");
+       
+        
+        
+        
+        while (true) {
         System.out.println("");
         System.out.println("The Services Provided by our Hotel :- ");
         System.out.println("****************************************************************");
@@ -18,10 +23,10 @@ public class reservation_system {
         int num = input.nextInt();
         
         
-        while (true) {
+        
             if (num == 1) {
                 DisplayRoom();
-                break;
+                
             }
             if (num == 2) {
 
