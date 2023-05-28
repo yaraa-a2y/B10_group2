@@ -1,25 +1,32 @@
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
 public class booking {
 
 private int time ; 
-private Date date  ;
-private room room_type ;
+private String date  ;
+private int room_type ;
+private int days ;
 private int price_range ;
 private int num_of_people ;
-private int booking_number ;
+static int booking_number ;
 
-booking (int time ,Date date ,room room_type ,int price_range ,int num_of_people ,int booking_number){
+booking (int time ,String date ,int days,int room_type ,int price_range ,int num_of_people ,int booking_number){
     
     this.time = time;
     this.date = date;
     this.room_type = room_type;
+    this.days = days;
     this.price_range = price_range;
     this.num_of_people = num_of_people;
     this.booking_number = booking_number;
 }
+
+    public booking() {
+    }
+
 
 
   public int getTime(){
@@ -30,20 +37,28 @@ booking (int time ,Date date ,room room_type ,int price_range ,int num_of_people
         this.time =time ;
     }
     
-    public Date getDate(){
+    public String getDate(){
         return date;
     }
     
-    public void setDate(Date date ){
+    public void setDate(String date ){
         this.date = date;
     }
     
-      public room getRoom_type(){
+      public int getRoom_type(){
         return room_type;
     }
     
-    public void setRoom_type(room room_type ){
+    public void setRoom_type(int room_type ){
         this.room_type =room_type ;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
     }
     
     public int getPrice_range(){
@@ -63,10 +78,20 @@ booking (int time ,Date date ,room room_type ,int price_range ,int num_of_people
     }
     
     public int getBooking_number(){
-        return booking_number;
+        
+        return ++booking_number;
     }
     
     public void setBooking_number(int booking_number ){
-        this.booking_number = booking_number;
+       this.booking_number = booking_number;
     }
+    
+
+
+    @Override
+    public String toString() {
+        return "\nbooking infomation \n" + " The starting time for the booking day is " + time +" o'clock"+ "\n Date= " + date + "\n Room type= " + room_type + "\n Number of days= " + days + "\n Total price= " + price_range + "\n Number of people= " + num_of_people + "\n Booking number= " + booking_number +"\n****************************************************************";
+    }
+    
+    
 }

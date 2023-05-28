@@ -1,12 +1,18 @@
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Scanner;
+import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
+
 
 public class reservation_system {
 
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-
+      
         System.out.println("----------------Welcome to Stars Hotel -----------------------");
         System.out.println("----------------Login to your account -----------------------");
         System.out.println("***************************************************************");
@@ -29,6 +35,7 @@ public class reservation_system {
                 
             }
             if (num == 2) {
+                reservation();
 
             }
             if (num == 3) {
@@ -65,6 +72,10 @@ public class reservation_system {
             new manager(1111695, 5000, "leenaSultan", 63, 0522552255, "female", "leenaa123", "09876134")
         };
         
+
+        
+        
+        
     }
 
     
@@ -80,4 +91,59 @@ public class reservation_system {
            System.out.println(roomArr[i].toString());
         }
     }
+
+    private static void reservation() { 
+        Scanner s = new Scanner(System.in);
+        //Time
+        System.out.print("The starting time for the booking day is:");
+        int time = 14;
+        System.out.println(time+"o'clock");
+        //Date
+        System.out.println("Enter the entry date:");
+        System.out.println("day:");
+        int day = s.nextInt();
+        System.out.println("month:");
+        int month = s.nextInt();
+        System.out.println("year:");
+        int year = s.nextInt();       
+        Date date= new Date();
+        SimpleDateFormat DateFormat=new SimpleDateFormat(day+"/"+month+"/"+year);
+        String formattedDate = DateFormat.format(date);
+        //Sitting days
+        System.out.println("Enter the number of sitting days:");
+        int days = s.nextInt();
+        //Rooom type
+        System.out.println("chose room type 1,2,3:");
+         room roomArr []= {
+         new room(1,"Studio with Sofa Bed","1 king bed " ,500)
+        , new room(2,"Deluxe Suite","Bedroom 1: 1 king bed Bedroom 2: 1 twin bed Living room: 1 sofa bed ",1500)
+        , new room(3,"King Suite","Bedroom 1: 1 king bed Bedroom 2: 1 king bed Bedroom 3: 1 twin bed  Living room: 2 sofa beds",5000)
+        }; 
+         for (int i = 0; i < roomArr.length; i++) {
+           System.out.println(roomArr[i].toString());
+        }
+        int room_type = s.nextInt();
+       //price
+        int price = 0;      
+        for (int j = 0; j < roomArr.length; j++) {
+        if(room_type==roomArr[j].getRoom_id()){
+             price= roomArr[j].getroom_price();            
+        }
+        }       
+        int totalPrice= days*price;
+        //Nomber of people
+        System.out.println("Enter number of people:");
+        int people = s.nextInt();
+        //Booking Number
+     booking b = new booking();
+        //Booking
+        booking res= new booking(time, formattedDate, days, room_type, totalPrice, people, b.getBooking_number());
+        System.out.println(res.toString()); 
+    }
+
+ 
+    
+   
+
+ 
 }
