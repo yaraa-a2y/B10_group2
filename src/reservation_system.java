@@ -16,8 +16,9 @@ public class reservation_system {
         System.out.println("----------------Welcome to Stars Hotel -----------------------");
         System.out.println("----------------Login to your account -----------------------");
         System.out.println("***************************************************************");
-       
-        
+       int f = 0;
+       customer []cus = new customer [30];
+        booking []res = new booking [30];
         
         
         while (true) {
@@ -27,7 +28,7 @@ public class reservation_system {
         System.out.println("1- browse rooms and suites  \n2- reservation    \n3- request a service    \n4- view list of reservation     \n5- exit  ");
         System.out.println("please enter the number of service from the menu : ");
         int num = input.nextInt();
-        
+         
         
         
             if (num == 1) {
@@ -35,14 +36,17 @@ public class reservation_system {
                 
             }
             if (num == 2) {
-                reservation();
-
+               
+                
+                reservation(res ,cus, f);
+                f++;
             }
             if (num == 3) {
 
             }
             if (num == 4) {
-
+                System.out.println("List of Reservation :- \n-------------------------------------------------------------------\n");
+            ViewListOfReservation(res);
             }
             if (num == 5) {
                 break;
@@ -72,7 +76,6 @@ public class reservation_system {
             new manager(1111695, 5000, "leenaSultan", 63, 0522552255, "female", "leenaa123", "09876134")
         };
         
-
         
         
         
@@ -92,13 +95,35 @@ public class reservation_system {
         }
     }
 
-    private static void reservation() { 
+    private static void reservation(booking []res, customer []cus ,int f) { 
+        
         Scanner s = new Scanner(System.in);
+        
+        System.out.println("Enter customer information:");
+        System.out.println("Name:");
+        String Name = s.next();
+        System.out.println("id:");
+        int id = s.nextInt();
+        System.out.println("address:");
+        String address = s.next();
+        System.out.println("phone:");
+        int Phone = s.nextInt();
+        System.out.println("age:");
+        int Age = s.nextInt();
+        System.out.println("sex:");
+        String Sex = s.next();
+        System.out.println("user_name:");
+        String user_name = s.next();
+        System.out.println("pass_word:");
+        String pass_word = s.next();
+        cus[f]=new customer ( address, id, Name, Age, Phone, Sex, user_name, pass_word) ;
+        
         //Time
         System.out.print("The starting time for the booking day is:");
         int time = 14;
         System.out.println(time+"o'clock");
         //Date
+        int room_num = (int)(Math.random()*100);
         System.out.println("Enter the entry date:");
         System.out.println("day:");
         int day = s.nextInt();
@@ -137,12 +162,25 @@ public class reservation_system {
         //Booking Number
      booking b = new booking();
         //Booking
-        booking res= new booking(time, formattedDate, days, room_type, totalPrice, people, b.getBooking_number());
-        System.out.println(res.toString()); 
+        
+         res[f]= new booking(room_num ,time, formattedDate, days, room_type, totalPrice, people, b.getBooking_number(), Name , id);
+        System.out.println(res[f].toString());
+        
     }
 
  
-    
+    public static void ViewListOfReservation(booking [] res){
+        
+        for (int i = 0; i < res.length; i++) {
+           if(res[i] != null){
+               
+              System.out.println(i +"- "+res[i].list());
+           }
+            }
+        
+        
+        
+    }
    
 
  
