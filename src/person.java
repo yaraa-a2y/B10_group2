@@ -1,12 +1,12 @@
 
 public class person {
 
-private String Name ;
-private int Age ;
-private int Phone ;
-private String Sex ;
-private String user_name ;
-private String pass_word ;
+    private String Name;
+    private int Age;
+    private int Phone;
+    private String Sex;
+    private String user_name;
+    private String pass_word;
 
     public person(String Name, int Age, int Phone, String Sex, String user_name, String pass_word) {
         this.Name = Name;
@@ -64,6 +64,6 @@ private String pass_word ;
     public void setPass_word(String pass_word) {
         this.pass_word = pass_word;
     }
-    
-    
+
+
 }

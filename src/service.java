@@ -1,19 +1,15 @@
 
-import java.sql.Time;
 
 
 public class service {
-  
-   private String TypeOfService ;
-   private int price ;
-   private Time time ;
 
-    public service(String TypeOfService, int price, Time time) {
+    private String TypeOfService;
+    private int price;
+
+    public service(String TypeOfService, int price) {
         this.TypeOfService = TypeOfService;
         this.price = price;
-        this.time = time;
     }
-
 
     public String getTypeOfService() {
         return TypeOfService;
@@ -23,9 +19,6 @@ public class service {
         return price;
     }
 
-    public Time getTime() {
-        return time;
-    }
 
     public void setTypeOfService(String TypeOfService) {
         this.TypeOfService = TypeOfService;
@@ -35,10 +28,13 @@ public class service {
         this.price = price;
     }
 
-    public void setTime(Time time) {
-        this.time = time;
+    @Override
+    public String toString() {
+        return "Service Type : " + TypeOfService + ", Price : " + price;
     }
-   
-   
-    
 }
+   
+   
+   
+   
+

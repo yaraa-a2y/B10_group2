@@ -1,8 +1,8 @@
 
 public class customer extends person {
 
-private String address ;   
-private int id ;
+    private String address;
+    private int id;
 
     public customer(String address, int id, String Name, int Age, int Phone, String Sex, String user_name, String pass_word) {
         super(Name, Age, Phone, Sex, user_name, pass_word);
@@ -11,19 +11,19 @@ private int id ;
     }
 
 
-public String getAddress(){
+    public String getAddress() {
         return address;
     }
-    
-    public void setAddress(String address ){
+
+    public void setAddress(String address) {
         this.address = address;
     }
 
-public int getId(){
+    public int getId() {
         return id;
     }
-    
-    public void setId(int id ){
-        this.id =id ;
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

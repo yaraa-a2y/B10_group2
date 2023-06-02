@@ -7,8 +7,6 @@ public class room {
     private String room_description ;
     private int room_price ;
 
-    
-    
     room(int room_id , String room_type , String room_description ,int room_price ){
         
     this.room_id= room_id ;
