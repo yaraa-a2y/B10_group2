@@ -66,13 +66,14 @@ public class reservation_systemTest {
      */
     @Test
     public void testRequestService() {
+         service[] services = {new service ("massage" , 100)};
+     
+         String result = services[0].toString();
+         String expResult = "Service Type : " + "massage" + ", Price : " + 100;       
+                 
+        assertEquals(expResult, result);
         
-//        
-//        service service =new service ("Breakfast", 50);
-//        String expResult = service.toString();
-//        String result = reservation_system.requestService().toString();
-//        assertEquals(expResult, result);
-        
+
     }
 
     /**
