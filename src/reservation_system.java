@@ -17,6 +17,16 @@ public class reservation_system {
         customer []cus = new customer [30];
         booking []res = new booking [30];
         service []ser = new service [30];
+        
+        service[] services = {
+                new service("Massage", 100),
+                new service("Extra Bed", 50),
+                new service("Breakfast", 50),
+                new service("Parking", 30),
+                new service("Spa", 150),
+                new service("Flowers", 50),
+
+        };
 
         while (true) {
             System.out.println("");
@@ -28,7 +38,10 @@ public class reservation_system {
 
 
             if (num == 1) {
-                DisplayRoom();
+                System.out.println("Enter number of people:");
+                int people = input.nextInt();
+                System.out.println(DisplayRoom(people).toString());
+
 
             }
             if (num == 2) {
@@ -38,7 +51,8 @@ public class reservation_system {
             }
             if (num == 3) {
                 System.out.println("Request a service :- \n-------------------------------------------------------------------\n");
-                ser[f] = requestService();
+//                ser[f] = requestService();
+                  DisplayService(services);
             }
             if (num == 4) {
                 System.out.println("List of Reservation :- \n-------------------------------------------------------------------\n");
@@ -78,41 +92,66 @@ public class reservation_system {
     }
 
 
-    public static void DisplayRoom(int people){
-        room rooms= null;
-
+       public static room DisplayRoom(int people){
+        room rooms = null;
         room roomArr []= {
-                new room(1,"Studio with Sofa Bed","1 king bed " ,500)
-                , new room(2,"Deluxe Suite","Bedroom 1: 1 king bed Bedroom 2: 1 twin bed Living room: 1 sofa bed ",1500)
-                , new room(3,"King Suite","Bedroom 1: 1 king bed Bedroom 2: 1 king bed Bedroom 3: 1 twin bed  Living room: 2 sofa beds",5000)
+                new room(1,"Studio with Sofa Bed","1 king bed " ,500,2)
+                , new room(2,"Deluxe Suite","Bedroom1: 1 king bed, Bedroom2: 1 twin bed, Living room: 1 sofa bed ",1500,4)
+                , new room(3,"King Suite","Bedroom1: 1 king bed, Bedroom2: 1 king bed, Bedroom3: 1 twin bed, Living room: 2 sofa beds",5000,8)
         };
-
-        for (int i = 0; i < roomArr.length; i++) {
-            System.out.println(roomArr[i].toString());
+        
+        for (int i = 0; i < roomArr.length; i++){ 
+            if(people == roomArr[i].getNumOfcustomer())
+             rooms = roomArr[i];
         }
+       return rooms;
     }
-    public static service requestService(){
-        service[] services = {
-                new service("Massage", 100),
-                new service("Extra Bed", 50),
-                new service("Breakfast", 50),
-                new service("Parking", 30),
-                new service("Spa", 150),
-                new service("Flowers", 50),
-
-        };
+       public static void DisplayService(service[] services){
+        
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the number of the service you want to request: ");
         for (int i = 0; i < services.length; i++) {
             System.out.println((i + 1) + "- " + services[i].getTypeOfService() + " " + services[i].getPrice() + " SR");
         }
         int num = input.nextInt();
-        while (num < 1 || num > services.length) {
+        requestService(num,services);
+       
+       }
+       
+       public static void requestService(int num,service[] services){
+           Scanner input = new Scanner(System.in);
+           if (num < 1 || num > services.length) {
             System.out.println("Invalid number, please enter a valid number: ");
             num = input.nextInt();
-        }
-        return services[num - 1];
-    }
+            requestService(num,services);
+        }else
+           System.out.println("Requested, thanks");    
+       }
+       
+       
+
+//    public static service requestService(){
+//        service[] services = {
+//                new service("Massage", 100),
+//                new service("Extra Bed", 50),
+//                new service("Breakfast", 50),
+//                new service("Parking", 30),
+//                new service("Spa", 150),
+//                new service("Flowers", 50),
+//
+//        };
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("Enter the number of the service you want to request: ");
+//        for (int i = 0; i < services.length; i++) {
+//            System.out.println((i + 1) + "- " + services[i].getTypeOfService() + " " + services[i].getPrice() + " SR");
+//        }
+//        int num = input.nextInt();
+//        while (num < 1 || num > services.length) {
+//            System.out.println("Invalid number, please enter a valid number: ");
+//            num = input.nextInt();
+//        }
+//        return services[num - 1];
+//    }
 
     private static void reservation(booking []res, customer []cus ,int f,service []ser) {
 
@@ -159,9 +198,9 @@ public class reservation_system {
         //Rooom type
         System.out.println("chose room type 1,2,3:");
         room roomArr []= {
-                new room(1,"Studio with Sofa Bed","1 king bed " ,500)
-                , new room(2,"Deluxe Suite","Bedroom 1: 1 king bed Bedroom 2: 1 twin bed Living room: 1 sofa bed ",1500)
-                , new room(3,"King Suite","Bedroom 1: 1 king bed Bedroom 2: 1 king bed Bedroom 3: 1 twin bed  Living room: 2 sofa beds",5000)
+                new room(1,"Studio with Sofa Bed","1 king bed " ,500,2)
+                , new room(2,"Deluxe Suite","Bedroom 1: 1 king bed Bedroom 2: 1 twin bed Living room: 1 sofa bed ",1500,4)
+                , new room(3,"King Suite","Bedroom 1: 1 king bed Bedroom 2: 1 king bed Bedroom 3: 1 twin bed  Living room: 2 sofa beds",5000,8)
         };
         for (int i = 0; i < roomArr.length; i++) {
             System.out.println(roomArr[i].toString());
@@ -171,7 +210,7 @@ public class reservation_system {
         int price = 0;
         for (int j = 0; j < roomArr.length; j++) {
             if(room_type==roomArr[j].getRoom_id()){
-                price= roomArr[j].getroom_price();
+                price= roomArr[j].getRoom_price();
             }
         }
         int totalPrice= days*price;

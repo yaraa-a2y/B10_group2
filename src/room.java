@@ -6,7 +6,7 @@ public class room {
     private String room_type ;
     private String room_description ;
     private int room_price ;
-    private int NumOfcustomer; ;
+    private int NumOfcustomer; 
 
     public room(int room_id, String room_type, String room_description, int room_price, int NumOfcustomer) {
         this.room_id = room_id;

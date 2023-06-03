@@ -66,12 +66,13 @@ public class reservation_systemTest {
      */
     @Test
     public void testRequestService() {
-//        System.out.println("requestService");
-//        service expResult = null;
-//        service result = reservation_system.requestService();
+        
+//        
+//        service service =new service ("Breakfast", 50);
+//        String expResult = service.toString();
+//        String result = reservation_system.requestService().toString();
 //        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+        
     }
 
     /**
