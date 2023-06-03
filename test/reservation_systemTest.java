@@ -3,12 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
@@ -18,23 +18,24 @@ public class reservation_systemTest {
     
     public reservation_systemTest() {
     }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
+
+    @BeforeClass
+    public static void setUpClass() throws Exception {
     }
 
+    @AfterClass
+    public static void tearDownClass() throws Exception {
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
+    }
+    
+    
     /**
      * Test of main method, of class reservation_system.
      */
@@ -53,9 +54,11 @@ public class reservation_systemTest {
     @Test
     public void testDisplayRoom() {
         System.out.println("DisplayRoom");
-        reservation_system.DisplayRoom();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int numofPepole = 2;
+        room room= new room(1,"Studio with Sofa Bed","1 king bed " ,500,2);
+        String expect= room.toString();
+        String result = reservation_system.DisplayRoom(2).toString();
+        assertEquals(expect,result);
     }
 
     /**
@@ -63,12 +66,12 @@ public class reservation_systemTest {
      */
     @Test
     public void testRequestService() {
-        System.out.println("requestService");
-        service expResult = null;
-        service result = reservation_system.requestService();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        System.out.println("requestService");
+//        service expResult = null;
+//        service result = reservation_system.requestService();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
     }
 
     /**
@@ -84,5 +87,7 @@ public class reservation_systemTest {
        String expect = "\n Room_num = "+2 +"\n Date= " + "2" + "\n Room type= " + 2 + "\n Number of days= " + 13 + "\n Total price= " + 1000 + "\n Number of people= " + 3 + "\n Booking number= " + 3 +"\n customer name = "+ "ahmad"+ "\n customer id = "+ 202020+"\n****************************************************************";
        assertEquals(expect, mas);
     }
+
+  
     
 }
