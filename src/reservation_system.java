@@ -32,20 +32,20 @@ public class reservation_system {
                 DisplayRoom();
 
             }
-            if (num == 2) {
+            else if (num == 2) {
 
                 reservation(res ,cus, f, ser);
                 f++;
             }
-            if (num == 3) {
+            else if (num == 3) {
                 System.out.println("Request a service :- \n-------------------------------------------------------------------\n");
                 ser[f] = requestService();
             }
-            if (num == 4) {
+            else if (num == 4) {
                 System.out.println("List of Reservation :- \n-------------------------------------------------------------------\n");
                 ViewListOfReservation(res);
             }
-            if (num == 5) {
+            else if (num == 5) {
                 break;
 
             }
@@ -83,8 +83,8 @@ public class reservation_system {
 
         room roomArr []= {
                 new room(1,"Studio with Sofa Bed","1 king bed " ,500)
-                , new room(2,"Deluxe Suite","Bedroom 1: 1 king bed Bedroom 2: 1 twin bed Living room: 1 sofa bed ",1500)
-                , new room(3,"King Suite","Bedroom 1: 1 king bed Bedroom 2: 1 king bed Bedroom 3: 1 twin bed  Living room: 2 sofa beds",5000)
+                , new room(2,"Deluxe Suite","Bedroom1: 1 king bed, Bedroom2: 1 twin bed, Living room: 1 sofa bed ",1500)
+                , new room(3,"King Suite","Bedroom1: 1 king bed, Bedroom2: 1 king bed, Bedroom3: 1 twin bed, Living room: 2 sofa beds",5000)
         };
 
         for (int i = 0; i < roomArr.length; i++) {
@@ -158,10 +158,10 @@ public class reservation_system {
         int days = s.nextInt();
         //Rooom type
         System.out.println("chose room type 1,2,3:");
-        room roomArr []= {
+         room roomArr []= {
                 new room(1,"Studio with Sofa Bed","1 king bed " ,500)
-                , new room(2,"Deluxe Suite","Bedroom 1: 1 king bed Bedroom 2: 1 twin bed Living room: 1 sofa bed ",1500)
-                , new room(3,"King Suite","Bedroom 1: 1 king bed Bedroom 2: 1 king bed Bedroom 3: 1 twin bed  Living room: 2 sofa beds",5000)
+                , new room(2,"Deluxe Suite","Bedroom1: 1 king bed, Bedroom2: 1 twin bed, Living room: 1 sofa bed ",1500)
+                , new room(3,"King Suite","Bedroom1: 1 king bed, Bedroom2: 1 king bed, Bedroom3: 1 twin bed, Living room: 2 sofa beds",5000)
         };
         for (int i = 0; i < roomArr.length; i++) {
             System.out.println(roomArr[i].toString());
