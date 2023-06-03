@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
 
+import java.util.Arrays;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -88,6 +89,18 @@ public class reservation_systemTest {
         String mas = res[0].list();
        String expect = "\n Room_num = "+2 +"\n Date= " + "2" + "\n Room type= " + 2 + "\n Number of days= " + 13 + "\n Total price= " + 1000 + "\n Number of people= " + 3 + "\n Booking number= " + 3 +"\n customer name = "+ "ahmad"+ "\n customer id = "+ 202020+"\n****************************************************************";
        assertEquals(expect, mas);
+    }
+    
+    @Test
+    public void testReservation() {
+     System.out.println("Reservation");
+        service[] ser = {new service ("massage" , 100)};
+        booking [] res = {new booking(2 ,14,"5/6/2023", 2, 2, 3000, 4, 1, "sulafah",100 ,ser[0])};
+        String result=res[0].toString(); 
+       String expect = "\nbooking infomation \n" + " The starting time for the booking day is " + 14 +" o'clock"+ "\n Room_num = "+2 +"\nDate= " + "5/6/2023" +
+               "\n Room type= " + 2 + "\n Number of days= " + 2 + "\n Total price= " + 3000 + "\n Number of people= " + 4 + "\n Booking number= " + 1 +
+               "\n****************************************************************";
+       assertEquals(expect, result);
     }
 
   

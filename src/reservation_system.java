@@ -153,7 +153,7 @@ public class reservation_system {
 //        return services[num - 1];
 //    }
 
-    private static void reservation(booking []res, customer []cus ,int f,service []ser) {
+    public static void reservation(booking []res, customer []cus ,int f,service []ser) {
 
         Scanner s = new Scanner(System.in);
 
@@ -220,7 +220,7 @@ public class reservation_system {
         //Booking Number
         booking b = new booking();
         //Booking
-
+        
         res[f]= new booking(room_num ,time, formattedDate, days, room_type, totalPrice, people, b.getBooking_number(), Name , id,ser[f]);
         System.out.println(res[f].toString());
     }
