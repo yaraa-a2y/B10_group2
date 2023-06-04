@@ -37,17 +37,7 @@ public class reservation_systemTest {
     }
     
     
-    /**
-     * Test of main method, of class reservation_system.
-     */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        reservation_system.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
 
     /**
      * Test of DisplayRoom method, of class reservation_system.
@@ -58,7 +48,7 @@ public class reservation_systemTest {
         int numofPepole = 2;
         room room= new room(1,"Studio with Sofa Bed","1 king bed " ,500,2);
         String expect= room.toString();
-        String result = reservation_system.DisplayRoom(2).toString();
+        String result = reservation_system.DisplayRoom(numofPepole).toString();
         assertEquals(expect,result);
     }
 
