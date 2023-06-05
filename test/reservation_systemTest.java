@@ -57,15 +57,13 @@ public class reservation_systemTest {
      */
     @Test
     public void testRequestService() {
-         service[] services = {new service ("massage" , 100)};
-     
-         String result = services[0].toString();
-         String expResult = "Service Type : " + "massage" + ", Price : " + 100;       
-                 
+         service [] services = { new service ("massage" , 100)};
+         int ServiceNum =1;
+         String expResult ="Requested, thanks";
+         String result = reservation_system.requestService(ServiceNum, services);
         assertEquals(expResult, result);
-        
-
     }
+
 
     /**
      * Test of ViewListOfReservation method, of class reservation_system.
@@ -93,6 +91,6 @@ public class reservation_systemTest {
        assertEquals(expect, result);
     }
 
-  
+ 
     
 }
