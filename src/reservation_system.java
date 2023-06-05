@@ -101,7 +101,7 @@ public class reservation_system {
         }
        return rooms;
     }
-       public static void DisplayService(service[] services){
+      public static void DisplayService(service[] services){
         
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the number of the service you want to request: ");
@@ -109,20 +109,23 @@ public class reservation_system {
             System.out.println((i + 1) + "- " + services[i].getTypeOfService() + " " + services[i].getPrice() + " SR");
         }
         int num = input.nextInt();
-        requestService(num,services);
+        String requested= requestService(num,services);
        
        }
-       
-       public static void requestService(int num,service[] services){
+       //we add return (String) To can test this method
+       public static String requestService(int num,service[] services){
            Scanner input = new Scanner(System.in);
            if (num < 1 || num > services.length) {
             System.out.println("Invalid number, please enter a valid number: ");
             num = input.nextInt();
             requestService(num,services);
         }else
-           System.out.println("Requested, thanks");    
+           System.out.println("Requested, thanks"); 
+            return "Requested, thanks";
        }
+
        
+      
     
     public static customer cutomerInfo(booking []res,customer []cus,int f,service []ser){
         Scanner input = new Scanner(System.in);
